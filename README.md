@@ -1,17 +1,58 @@
-This is a backup of my Pokemon Game saves. Currently covering generations 1-7
-Notes:
-Anyone is free to use any of these save files. I run my backup script every time i finish playing which syncs my game saves with this repository.
-as such every game will have saves at different checkpoints throughout the game - perfect if anyone needs to capture footsage a specific game section.
-Usage:
-clone this repository - git clone https://github.com/Bl1ndBeholder/pokemon-saves.git
-The save files are saved as a timestamp (DDMMYYYYHHMM.sav)
-these will need renaming to "romname.sav"
-eg: If your pokemon emerald rom is named "Pokemon-Emerald-EU.gba" your save file needs renaming to "Pokemon-Emerald-EU.sav"
-By default mgba and melonDS use the rom directory for saves. however, you can set any directory for save files. simply place the renamed .sav in the directory.
-for 3ds saves - save direcories are generated when first launching the game.
-For example - launch Pokemon X once and exit the emulation.
-In Azahar/Citra/Lime3ds right click on the Alpha Sapphire Game.
-Select - open -> Save Data Location
-Copy or move the Alpha Sapphire .sav
-*IMPORTANT* 
-Rename the 3ds .sav file to "main"
+# Pokémon Save Collection
+
+A public archive of Pokémon save files across Generations I–VII — free for anyone to download and use.  
+Useful for: accessing version exclusives, completing trade evolutions, testing, or skipping replay grind.
+
+---
+
+## Quick usage
+
+### GBA / DS (Gen I–V)
+1. Pick a save file (files are timestamped `DDMMYYYYHHMM.sav`).  
+2. Rename it to match your ROM filename (keep the `.sav` extension).  
+   - Example: `Pokemon-Emerald.gba` → `Pokemon-Emerald.sav`  
+3. Place it in your emulator’s save folder.  
+   - Most emulators (mGBA, DeSmuME, melonDS) default to the ROM folder.  
+
+### 3DS (Gen VI–VII)
+- Saves are always called **`main`** (no extension).  
+- Intended for the **Azahar** emulator.  
+
+To use in Azahar:
+1. Start the game once to generate its save directory.  
+2. Replace the generated `main` file with the downloaded one.  
+
+On real hardware:  
+With a homebrewed 3DS and [Checkpoint](https://github.com/FlagBrew/Checkpoint), you can restore these `main` saves to physical cartridges or digital titles.
+
+---
+
+## Repository structure
+
+Top-level game folders include (non-exhaustive):  
+`alpha-sapphire/`, `colosseum/`, `crystal/`, `emerald/`, `fire-red/`, `moon/`,  
+`omega-ruby/`, `red/`, `ruby/`, `sun/`, `ultra-moon/`, `ultra-sun/`,  
+`white/`, `x/`, `xd-gale-of-darkness/`, `y/`.
+
+**My saves** live directly under each game folder, named with a timestamp:  
+pokemon-saves/emerald/DDMMYYYYHHMM.sav
+
+
+**Contributor saves** must go inside a subdirectory named after your GitHub username:  
+pokemon-saves/emerald/joebloggs/DDMMYYYYHHMM.sav
+
+
+---
+
+## Contributing
+
+- Add your saves under your GitHub username folder (see above).  
+- Useful checkpoints are encouraged (e.g. before legendaries, Elite Four, trade evolutions).  
+- Open a pull request with a short note describing your save.  
+
+---
+
+### ⚠️ Disclaimer
+Save files may contain in-game personal data (player name, playtime, link codes).  
+Treat these as public backups. Use responsibly and respect original game copyrights.
+If submitting save files - it is recommended to not use your own name on your save.
