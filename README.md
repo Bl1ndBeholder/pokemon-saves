@@ -1,84 +1,107 @@
-Pokémon Save Collection
+# Pokémon Saves Backup 📂
 
-A public archive of Pokémon save files across Generations I–VII — free for anyone to download and use.
-Useful for: accessing version exclusives, completing trade evolutions, testing, or skipping replay grind.
+A collection of Pokémon save files across multiple generations.  
 
-All saves in this repository are backed up with a .sav prefix for consistency.
+These saves are provided so players can:  
+- Access version-exclusive Pokémon.  
+- Skip trade evolutions.  
+- Jump to key checkpoints (before legendaries, gyms, or the Elite Four).  
 
-Quick reference
-Platform	Emulator / Usage	File from repo	Rename / Place in
-GBA / DS	mGBA, DeSmuME, melonDS	DDMMYYYYHHMM.sav	Match ROM name, keep .sav
-3DS	Azahar / Checkpoint	DDMMYYYYHHMM.sav	Rename to main (no extension)
-GameCube	Dolphin	DDMMYYYYHHMM.sav	Rename to .gci using the correct Dolphin-generated filename. Example: 01-GC6E-pokemon_colosseum.gci. Tip: Start the game in Dolphin first to generate the save folder and filename for your game version.
+All saves in this repo are stored as **`.sav` backups**.  
+👉 You may need to **rename them** depending on the emulator or hardware you’re using.
 
-Note: All saves in this repo are .sav.
+---
 
-3DS saves → rename to main (no extension).
+## 🎮 Recommended Emulators
 
-GameCube saves → rename to .gci to match Dolphin's generated filename for your version.
+| Platform          | Emulator   | Link |
+|-------------------|------------|------|
+| Game Boy / Color / Advance | **mGBA** | [https://mgba.io](https://mgba.io) |
+| Nintendo DS       | **melonDS** | [https://melonds.kuribo64.net](https://melonds.kuribo64.net) |
+| Nintendo 3DS      | **Azahar** | [https://github.com/AzaharEmu/Azahar](https://github.com/AzaharEmu/Azahar) |
+| Nintendo GameCube | **Dolphin** | [https://dolphin-emu.org](https://dolphin-emu.org) |
 
-Quick usage
-GBA / DS (Gen I–V)
+---
 
-Pick a save file.
+## 📥 How to Use These Saves
 
-Rename it to match your ROM filename (keep .sav).
+### In Emulators
 
-Place it in your emulator’s save folder.
+#### Game Boy / GBC / GBA (mGBA)
+1. Download a save from this repo (`.sav`).  
+2. Rename the file to match your ROM’s name (e.g., `Pokemon-Emerald.sav`).  
+3. Place it in the same folder as your ROM.  
+4. mGBA will automatically load the save.  
 
-3DS (Gen VI–VII)
+---
 
-Start the game once in Azahar to generate the save folder.
+#### Nintendo DS (melonDS)
+1. Download a `.sav` file.  
+2. Rename it to match your ROM name (e.g., `Pokemon-Black.sav`).  
+3. Place it in the same folder as your ROM.  
+4. melonDS will load the save automatically.  
 
-Replace the generated main file with the downloaded one.
+---
 
-On real hardware:
-With a homebrewed 3DS and Checkpoint
-, you can restore these main saves to physical cartridges or digital titles.
+#### Nintendo 3DS (Azahar)
+1. Launch the game once in Azahar to generate a save file.  
+2. Right-click the game in Azahar and choose **Open Save Location**.  
+3. Delete the existing `main` file.  
+4. Download a `.sav` file from this repo and rename it to `main` (no extension).  
+5. Place it in the folder you just opened, replacing the existing "main".  
+6. Restart the game in Azahar — your save should load.  
 
-GameCube (XD: Gale of Darkness & Colosseum)
+---
 
-Start the game once in Dolphin to generate the save folder and filename.
+#### Nintendo GameCube (Dolphin)
+1. Run the game once in Dolphin to generate a memory card save file.  
+2. Download the `.sav` from this repo.  
+3. Rename it to match Dolphin’s `.gci` format (e.g., `01-GC6E-pokemon_colosseum.gci`).  
+   - Tip: check inside Dolphin’s memory card folder to see the correct filename.  
+4. Place it in your `User/GC/USA/Card A/` folder (or equivalent).  
+5. Launch the game in Dolphin — your save will appear.  
 
-Copy the .sav file from this repo and rename it to match Dolphin’s generated filename with .gci.
+---
 
-Example: 01-GC6E-pokemon_colosseum.gci for Colosseum.
+### On Real Hardware
 
-Place the renamed .gci in the Dolphin save folder:
+#### Game Boy / GBC / GBA
+- Requires a **cartridge reader/writer** (like GBxCart RW) or a **DS flash cart**.  
+1. Copy the `.sav` file to your PC.  
+2. Use the hardware’s software to flash it to your physical cartridge.  
 
-Dolphin Emulator/GC/Saves/<GameID>/
+---
 
-Repository structure
+#### Nintendo DS
+Two main methods:  
 
-Top-level game folders include (non-exhaustive):
-alpha-sapphire/, colosseum/, crystal/, emerald/, fire-red/, moon/,
-omega-ruby/, red/, ruby/, sun/, ultra-moon/, ultra-sun/,
-white/, x/, xd-gale-of-darkness/, y/.
+- **Checkpoint (via homebrewed 3DS):**  
+  1. Place the `.sav` on your SD card under `/3ds/Checkpoint/saves/<TitleID>/`.  
+  2. Use Checkpoint to **Restore Save** onto your DS cart.  
 
-Author saves live directly under each game folder, named with a timestamp:
+- **DS Flash Cart:**  
+  1. Use the flash cart’s save manager to inject the `.sav`.  
+  2. Start the game on your DS — the save will load.  
 
-pokemon-saves/emerald/DDMMYYYYHHMM.sav
+---
 
+#### Nintendo 3DS
+- **Checkpoint (homebrewed 3DS only):**  
+  1. Copy the save file from this repo.  
+  2. Rename it to `main`.  
+  3. Place it inside `/3ds/Checkpoint/saves/<TitleID>/`.  
+  4. Use Checkpoint’s **Restore Save** option to inject it back into the cart or digital copy.  
 
-GameCube saves .sav → rename to .gci in Dolphin.
+---
 
-3DS saves → rename to main (no extension).
+#### Nintendo GameCube
+- Requires a **homebrewed Wii with GCMM (GameCube Memory Manager)**.  
+1. Place the `.gci` file on your SD card under `/MCBACKUP/`.  
+2. Run GCMM on your Wii/GameCube.  
+3. Restore the save to your physical memory card.  
 
-Contributor saves must go inside a subdirectory named after your GitHub username:
+---
 
-pokemon-saves/emerald/joebloggs/DDMMYYYYHHMM.sav
-pokemon-saves/xd-gale-of-darkness/joebloggs/DDMMYYYYHHMM.gci
-pokemon-saves/omega-ruby/joebloggs/main
-
-Contributing
-
-Add your saves under your GitHub username folder (see above).
-
-Useful checkpoints are encouraged (e.g. before legendaries, Elite Four, trade evolutions).
-
-Open a pull request with a short note describing your save.
-
-⚠️ Disclaimer
-
-Save files may contain in-game personal data (player name, playtime, link codes).
-Treat these as public backups. Use responsibly and respect original game copyrights.
+## ⚠️ Disclaimer
+These saves are provided **for preservation and personal use only**.  
+Do not use them for cheating in online battles or competitions.  
