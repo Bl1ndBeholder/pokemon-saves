@@ -27,8 +27,8 @@ All saves in this repository are **backed up as `.sav`** files.
 
 | Platform | Backup in repo     | Name to use in emulator                   | Example                         | Emulator / Tool |
 | -------- | ------------------ | ----------------------------------------- | ------------------------------- | --------------- |
-| GBA / DS | `DDMMYYYYHHMM.sav` | Keep `.sav` and match ROM filename        | `Pokemon-Emerald.sav`           | mGBA, DeSmuME   |
-| 3DS      | `DDMMYYYYHHMM.sav` | `main` (no extension)                     | `main`                          | Citra           |
+| GB/ DS   | `DDMMYYYYHHMM.sav` | Keep `.sav` and match ROM filename        | `Pokemon-Emerald.sav`           | mGBA, melonDS   |
+| 3DS      | `DDMMYYYYHHMM.sav` | `main` (no extension)                     | `main`                          | Azahar          |
 | GameCube | `DDMMYYYYHHMM.sav` | Rename to `.gci` using Dolphin’s filename | `01-GC6E-pokemon_colosseum.gci` | Dolphin         |
 
 > **Tip:** Treat `.sav` files as raw backups. Always rename them for the emulator you are using.
@@ -161,6 +161,15 @@ sudo dnf install git
 ```bash
 sudo pacman -S git
 ```
+**OpenSuse:**
+
+```bash
+sudo zypper in git
+```
+**Void**
+```bash
+sudo xbps-install -S git
+```
 
 Verify installation:
 
@@ -182,7 +191,7 @@ Example folder structure using a local backup:
 ~/Documents/Pokemon/save-backup/omega-ruby/joebloggs/DDMMYYYYHHMM.sav   <- 3DS backup
 ```
 
-> **Important:** Do not upload renamed `.gci` or `main` files — only the `.sav` backup.
+> **Important:** Do not upload `.gci` or `main` files — only the renamed `.sav` backup.
 
 ---
 
@@ -233,6 +242,7 @@ git push origin add-my-saves
 
 * Only include your **own saves**.
 * Do **not** include any personal information in your save files (e.g., names, friend codes, or other identifiers).
+* No ROM Files - only submit **save file data**.
 * Submitted saves **must be legitimate**: no cheats, edited saves, or ROM hacks.
 * Useful checkpoints: before legendaries, trade evolutions, or Elite Four.
 * Double-check that your save works in an emulator.
