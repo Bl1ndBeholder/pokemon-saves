@@ -28,8 +28,8 @@ All saves in this repository are **backed up as `.sav`** files.
 | Platform | Backup in repo     | Name to use in emulator                   | Example                         | Emulator / Tool |
 | -------- | ------------------ | ----------------------------------------- | ------------------------------- | --------------- |
 | GB/ DS   | `DDMMYYYYHHMM.sav` | Keep `.sav` and match ROM filename        | `Pokemon-Emerald.sav`           | mGBA, melonDS   |
-| 3DS      | `DDMMYYYYHHMM.sav` | `main` (no extension)                     | `main`                          | Azahar          |
-| GameCube | `DDMMYYYYHHMM.sav` | Rename to `.gci` using Dolphin’s filename | `01-GC6E-pokemon_colosseum.gci` | Dolphin         |
+| 3DS      | `DDMMYYYYHHMM`     | `main` (no extension)                     | `main`                          | Azahar          |
+| GameCube | `DDMMYYYYHHMM.gci` | Rename to `.gci` using Dolphin’s filename | `01-GC6E-pokemon_colosseum.gci` | Dolphin         |
 
 > **Tip:** Treat `.sav` files as raw backups. Always rename them for the emulator you are using.
 
