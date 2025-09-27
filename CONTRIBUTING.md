@@ -1,151 +1,262 @@
-Pokémon Save Collection
+# Contributing to Pokémon Save Collection
 
-A public archive of Pokémon save files across Generations I–VII — free for anyone to download and use.
-Useful for: accessing version exclusives, completing trade evolutions, testing, or skipping replay grind.
+Thank you for wanting to contribute!  
+This guide explains how to:
 
-All saves in this repository are backed up with a .sav prefix for consistency.
+* Dump save files from emulators or physical hardware.
+* Submit them to the repository.
 
-Quick reference
-Platform	Emulator / Usage	File from repo	Rename / Place in
-GBA / DS	mGBA, DeSmuME, melonDS	DDMMYYYYHHMM.sav	Match ROM name, keep .sav
-3DS	Azahar / Checkpoint	DDMMYYYYHHMM.sav	Rename to main (no extension)
-GameCube	Dolphin	DDMMYYYYHHMM.sav	Rename to .gci using the correct Dolphin-generated filename. Example: 01-GC6E-pokemon_colosseum.gci. Tip: Start the game in Dolphin first to generate the save folder and filename for your game version.
+> **Before you start:**
+>
+> * Only contribute your **own save files**.
+> * Make sure **Git is installed** (instructions below).
+> * Have access to your game saves via emulator or hardware.
+> * Submitted saves **must be legitimate**: no cheats, edited saves, or ROM hacks.
 
-Note: All saves in this repo are .sav.
+---
 
-3DS saves → rename to main (no extension).
+## 1. How the files work
 
-GameCube saves → rename to .gci to match Dolphin's generated filename for your version.
+All saves in this repository are backed up in their **native format**:
 
-Quick usage
-GBA / DS (Gen I–V)
+* **GB / GBC / GBA / DS:** `.sav`
+* **3DS:** no extension (file is always `main`)
+* **GameCube:** `.gci`
 
-Pick a save file.
+Each file is timestamped when backed up:
 
-Rename it to match your ROM filename (keep .sav).
+* Format: `DDMMYYYYHHMM`
+* Example: `270920251834.sav`
 
-Place it in your emulator’s save folder.
+### Platform Reference
 
-3DS (Gen VI–VII)
+| Platform | Backup in repo          | Name to use in emulator                   | Example                         | Emulator / Tool |
+| -------- | ----------------------- | ----------------------------------------- | ------------------------------- | --------------- |
+| GB / DS  | `DDMMYYYYHHMM.sav`      | Keep `.sav` and match ROM filename        | `Pokemon-Emerald.sav`           | mGBA, melonDS   |
+| 3DS      | `DDMMYYYYHHMM` (no ext) | `main` (no extension)                     | `main`                          | Azahar          |
+| GameCube | `DDMMYYYYHHMM.gci`      | Rename to `.gci` using Dolphin’s filename | `01-GC6E-pokemon_colosseum.gci` | Dolphin         |
 
-Start the game once in Azahar to generate the save folder.
+---
 
-Replace the generated main file with the downloaded one.
+## 2. Dumping save files from physical hardware
 
-On real hardware:
-With a homebrewed 3DS and Checkpoint
-, you can restore these main saves to physical cartridges or digital titles.
+### 3DS
 
-GameCube (XD: Gale of Darkness & Colosseum)
+**Recommended:** Use **Checkpoint** on a homebrewed 3DS.
 
-Start the game once in Dolphin to generate the save folder and filename.
+1. Insert your 3DS cartridge.
+2. Open Checkpoint and select **Dump Save**.
+3. The save will be written to your SD card at:
 
-Copy the .sav file from this repo and rename it to match Dolphin’s generated filename with .gci.
+```
+/3ds/Checkpoint/saves/<TitleID>/
+```
 
-Example: 01-GC6E-pokemon_colosseum.gci for Colosseum.
+* `<TitleID>` example: `00040000001A2C00`
+* The save file is called `main` (no extension).
 
-Place the renamed .gci in the Dolphin save folder:
+4. Copy `main` to your computer.
 
-Dolphin Emulator/GC/Saves/<GameID>/
+---
 
-Repository structure
+### Nintendo DS
 
-Top-level game folders include (non-exhaustive):
-alpha-sapphire/, colosseum/, crystal/, emerald/, fire-red/, moon/,
-omega-ruby/, red/, ruby/, sun/, ultra-moon/, ultra-sun/,
-white/, x/, xd-gale-of-darkness/, y/.
+**Recommended:** Use a 3DS with Checkpoint if available (see above).
 
-Author saves live directly under each game folder, named with a timestamp:
+**Alternative (if no 3DS is available):** Use a **DS Flashcart** (R4, Acekard, DSTT) with save dumping software.
 
-pokemon-saves/emerald/DDMMYYYYHHMM.sav
+**Example software for DS Flashcarts:**
 
+* **R4 / R4i:** R4i Save Manager
+* **Acekard:** Acekard Save Tool
+* **DSTT:** DSTT Save Manager
 
-GameCube saves .sav → rename to .gci in Dolphin.
+Steps:
 
-3DS saves → rename to main (no extension).
+1. Insert the DS cartridge into the Flashcart.
+2. Open the save dumping software on the Flashcart.
+3. Dump the save to `.sav` format.
+4. Copy the `.sav` file to your computer.
 
-Contributor saves must go inside a subdirectory named after your GitHub username:
+---
 
-pokemon-saves/emerald/joebloggs/DDMMYYYYHHMM.sav
-pokemon-saves/xd-gale-of-darkness/joebloggs/DDMMYYYYHHMM.gci
-pokemon-saves/omega-ruby/joebloggs/main
+### Game Boy Advance
 
-Contributing
+If you have a GBA cartridge and a **DS flashcart that supports GBA**:
 
-Add your saves under your GitHub username folder (see above).
+1. Insert the GBA cartridge into the flashcart.
+2. Use the Flashcart’s GBA save dumping software (e.g., **GBA Backup Tool** or **R4i Save Manager**).
+3. Dump the save as `.sav`.
+4. Copy it to your computer.
 
-Useful checkpoints are encouraged (e.g. before legendaries, Elite Four, trade evolutions).
+---
 
-Open a pull request with a short note describing your save.
+### Game Boy / Game Boy Color
 
-⚠️ Disclaimer
+1. Use a **GB cartridge reader** (e.g., GBxCart RW).
+2. Use the software to read the save and save it as `.sav` on your computer.
 
-Save files may contain in-game personal data (player name, playtime, link codes).
-Treat these as public backups. Use responsibly and respect original game copyrights.
-ChatGPT said:
+---
 
-Nice — thanks for pasting your README.md. Since your script now keeps the original file type automatically, you no longer need to tell users to rename .sav → .gci or .sav → main.
+### GameCube
 
-Here’s an updated version that reflects the new behavior:
+There are two common ways to get a GameCube save:
 
-Pokémon Save Collection
+**1. Using Dolphin emulator (recommended if you have a digital backup):**
 
-A public archive of Pokémon save files across Generations I–VII — free for anyone to download and use.
-Useful for: accessing version exclusives, completing trade evolutions, testing, or skipping replay grind.
+1. Run the game once in **Dolphin** to generate a save folder.
+2. Copy the `.gci` backup from the repository and rename it to match Dolphin’s `.gci` filename.
 
-All saves in this repository are backed up with their native save type for accuracy.
+**2. Copying a save from a Wii console to an SD card:**
 
-Quick reference
-Platform	Emulator / Usage	File from repo	Placement / Notes
-GB / GBC / GBA / DS	mGBA, DeSmuME, melonDS	DDMMYYYYHHMM.sav	Rename to match ROM name (keep .sav).
-3DS	Azahar / Checkpoint	DDMMYYYYHHMM (no extension)	Replace the generated main file.
-GameCube	Dolphin	DDMMYYYYHHMM.gci	Place in Dolphin’s memory card folder. Must match the Dolphin-generated filename (e.g. 01-GC6E-pokemon_colosseum.gci).
-Quick usage
-GBA / DS (Gen I–V)
+1. Insert the GameCube memory card into your Wii.
+2. Go to **Wii System Menu → Data Management → Save Data → GameCube**.
+3. Find your game save and **copy it to an SD card**.
 
-Pick a save file from the repo.
+   * SD card must be FAT16/FAT32.
+4. Insert the SD card into your computer.
+5. Rename the save to `.gci` format for Dolphin (example: `01-GC6E-pokemon_colosseum.gci`).
 
-Rename it to match your ROM filename (keep .sav).
+---
 
-Place it in your emulator’s save folder.
+## 3. Installing Git
 
-3DS (Gen VI–VII)
+### Windows
 
-Start the game once in Azahar (or on hardware with Checkpoint) to generate the save folder.
+1. Download Git: [https://git-scm.com/download/win](https://git-scm.com/download/win)
+2. Run installer (keep default options).
+3. Open **Git Bash** and type:
 
-Replace the generated main file with the downloaded one (DDMMYYYYHHMM, no extension).
+```bash
+git --version
+```
 
-On real hardware:
-With a homebrewed 3DS and Checkpoint, you can restore these saves to physical cartridges or digital titles.
+### MacOS
 
-GameCube (Colosseum / XD: Gale of Darkness)
+1. Open Terminal.
+2. Type:
 
-Start the game once in Dolphin to generate the save folder and correct .gci filename.
+```bash
+git --version
+```
 
-Copy the save file from this repo (DDMMYYYYHHMM.gci).
+3. If Git is missing, follow prompts to install Xcode Command Line Tools.
 
-Rename it to match Dolphin’s generated filename (example: 01-GC6E-pokemon_colosseum.gci).
+### Linux
 
-Place it in Dolphin’s memory card folder:
+Use your package manager:
 
-Dolphin Emulator/GC/Saves/<GameID>/
+**Ubuntu / Debian:**
 
-Repository structure
+```bash
+sudo apt update
+sudo apt install git
+```
 
-Top-level game folders include (non-exhaustive):
-alpha-sapphire/, colosseum/, crystal/, emerald/, fire-red/, moon/,
-omega-ruby/, red/, ruby/, sun/, ultra-moon/, ultra-sun/,
-white/, x/, xd-gale-of-darkness/, y/.
+**Fedora:**
 
-Author saves live directly under each game folder, named with a timestamp:
+```bash
+sudo dnf install git
+```
 
-pokemon-saves/emerald/DDMMYYYYHHMM.sav
-pokemon-saves/xd-gale-of-darkness/DDMMYYYYHHMM.gci
-pokemon-saves/omega-ruby/DDMMYYYYHHMM
+**Arch:**
 
+```bash
+sudo pacman -S git
+```
 
-Contributor saves must go inside a subdirectory named after your GitHub username:
+**OpenSUSE:**
 
-pokemon-saves/emerald/joebloggs/DDMMYYYYHHMM.sav
-pokemon-saves/xd-gale-of-darkness/joebloggs/DDMMYYYYHHMM.gci
-pokemon-saves/omega-ruby/joebloggs/DDMMYYYYHHMM
+```bash
+sudo zypper in git
+```
+
+**Void:**
+
+```bash
+sudo xbps-install -S git
+```
+
+Verify installation:
+
+```bash
+git --version
+```
+
+---
+
+## 4. Organizing your save for this repo
+
+Inside the correct game folder, create a folder with your GitHub username and place your saves there.  
+
+Use the **native format**:
+
+* GB/GBC/GBA/NDS → `.sav`
+* 3DS → `main` (no extension)
+* GameCube → `.gci`
+
+Example folder structure using a local backup:
+
+```
+~/Documents/Pokemon/save-backup/emerald/joebloggs/DDMMYYYYHHMM.sav
+~/Documents/Pokemon/save-backup/xd-gale-of-darkness/joebloggs/DDMMYYYYHHMM.gci
+~/Documents/Pokemon/save-backup/omega-ruby/joebloggs/DDMMYYYYHHMM    <- 3DS backup (main)
+```
+
+> **Important:** Do not upload renamed emulator-specific files.  
+> Only contribute raw backups in their native format as shown above.
+
+---
+
+## 5. Submitting your save (GitHub Pull Request)
+
+1. **Clone the repository**
+
+```bash
+git clone https://github.com/Bl1ndBeholder/pokemon-saves.git
+cd pokemon-saves
+```
+
+2. **Add your save files**
+
+* Create a folder with your GitHub username in the correct game folder.
+* Copy your save files there.
+
+3. **Commit changes**
+
+```bash
+git add .
+git commit -m "Added save files for <game> by <username>"
+```
+
+4. **Push changes**
+
+```bash
+git push origin main
+```
+
+> Recommended: create a branch first:
+
+```bash
+git checkout -b add-my-saves
+git push origin add-my-saves
+```
+
+5. **Open a Pull Request**
+
+* Go to your fork on GitHub.
+* Click **Compare & pull request**.
+* Add a short description (e.g., “Added Emerald save by joebloggs before Elite Four”).
+* Submit the PR.
+
+---
+
+## 6. Tips for beginners
+
+* Only include your **own saves**.
+* Do **not** include any personal information in your save files (e.g., names, friend codes, or other identifiers).
+* No ROM Files — only submit **save file data**.
+* Submitted saves **must be legitimate**: no cheats, edited saves, or ROM hacks.
+* Useful checkpoints: before legendaries, trade evolutions, or Elite Four.
+* Double-check that your save works in an emulator.
+* Follow folder/naming rules carefully — PRs not following them may be rejected.
