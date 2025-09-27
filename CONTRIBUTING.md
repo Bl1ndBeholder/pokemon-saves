@@ -223,12 +223,12 @@ cd pokemon-saves
 * Copy your save files there.
 
 3. **Commit changes**
-
+  
 ```bash
 git add .
-git commit -m "Added save files for <game> by <username>"
+git commit -m "<current gamestate>"
+example: git commit -m "before the second gym"
 ```
-
 4. **Push changes**
 
 ```bash
