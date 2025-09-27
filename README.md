@@ -28,10 +28,11 @@ All saves in this repo are stored as **`.sav` backups**.
 ### In Emulators
 
 #### Game Boy / GBC / GBA (mGBA)
-1. Download a save from this repo (`.sav`).  
-2. Rename the file to match your ROM’s name (e.g., `Pokemon-Emerald.sav`).  
-3. Place it in the same folder as your ROM.  
-4. mGBA will automatically load the save.  
+1. Download a save from this repo (`.sav / .gci / *`).
+2. please note 3ds save files are called "main". the archived saves are named "ddmmyyyyhhmm".  
+3. Rename the file to match your ROM’s name (e.g., `Pokemon-Emerald.sav`).  
+4. Place it in the same folder as your ROM.  
+5. mGBA will automatically load the save.  
 
 ---
 
@@ -47,7 +48,7 @@ All saves in this repo are stored as **`.sav` backups**.
 1. Launch the game once in Azahar to generate a save file.  
 2. Right-click the game in Azahar and choose **Open Save Location**.  
 3. Delete the existing `main` file.  
-4. Download a `.sav` file from this repo and rename it to `main` (no extension).  
+4. Download a `ddmmyyyyhhmm` file from this repo and rename it to `main` (no extension).  
 5. Place it in the folder you just opened, replacing the existing "main".  
 6. Restart the game in Azahar — your save should load.  
 
@@ -55,7 +56,7 @@ All saves in this repo are stored as **`.sav` backups**.
 
 #### Nintendo GameCube (Dolphin)
 1. Run the game once in Dolphin to generate a memory card save file.  
-2. Download the `.sav` from this repo.  
+2. Download the `.gci` from this repo.  
 3. Rename it to match Dolphin’s `.gci` format (e.g., `01-GC6E-pokemon_colosseum.gci`).  
    - Tip: check inside Dolphin’s memory card folder to see the correct filename.  
 4. Place it in your `User/GC/USA/Card A/` folder (or equivalent).  
