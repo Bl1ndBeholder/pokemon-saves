@@ -29,7 +29,6 @@ All saves in this repo are stored as **`.sav/.gci/*` backups**.
 
 #### Game Boy / GBC / GBA (mGBA)
 1. Download a save from this repo (`.sav / .gci / *`).
-2. please note 3ds save files are called "main". the archived saves are named "ddmmyyyyhhmm".  
 3. Rename the file to match your ROM’s name (e.g., `Pokemon-Emerald.sav`).  
 4. Place it in the same folder as your ROM.  
 5. mGBA will automatically load the save.  
@@ -46,6 +45,7 @@ All saves in this repo are stored as **`.sav/.gci/*` backups**.
 
 #### Nintendo 3DS (Azahar)
 1. Launch the game once in Azahar to generate a save file.  
+2. please note 3ds save files are called "main". the archived saves are named "ddmmyyyyhhmm".  
 2. Right-click the game in Azahar and choose **Open Save Location**.  
 3. Delete the existing `main` file.  
 4. Download a `ddmmyyyyhhmm` file from this repo and rename it to `main` (no extension).  
