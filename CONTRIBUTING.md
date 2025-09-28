@@ -198,9 +198,9 @@ Use the **native format**:
 Example folder structure using a local backup:
 
 ```
-~/Documents/Pokemon/save-backup/emerald/joebloggs/DDMMYYYYHHMM.sav
-~/Documents/Pokemon/save-backup/xd-gale-of-darkness/joebloggs/DDMMYYYYHHMM.gci
-~/Documents/Pokemon/save-backup/omega-ruby/joebloggs/DDMMYYYYHHMM    <- 3DS backup (main)
+pokemon-saves/emerald/joebloggs/DDMMYYYYHHMM.sav
+pokemon-saves/xd-gale-of-darkness/joebloggs/DDMMYYYYHHMM.gci
+pokemon-saves/omega-ruby/joebloggs/DDMMYYYYHHMM    <- 3DS backup (main)
 ```
 
 > **Important:** Do not upload renamed emulator-specific files.  
