@@ -222,32 +222,36 @@ cd pokemon-saves
 * Create a folder with your GitHub username in the correct game folder.
 * Copy your save files there.
 
-3. **Commit changes**
-  
+3. **Create a branch named after the game**
+
+```bash
+git checkout -b <gamename>
+```
+Example: `git checkout -b emerald`
+
+4. **Commit changes**
+
 ```bash
 git add .
 git commit -m "<current gamestate>"
-example: git commit -m "before the second gym"
 ```
-4. **Push changes**
+Example: `git commit -m "before the second gym"`
+
+5. **Push changes**
 
 ```bash
-git push origin main
+git push origin <gamename>
 ```
+Example: `git push origin emerald`
 
-> Recommended: create a branch first:
-
-```bash
-git checkout -b add-my-saves
-git push origin add-my-saves
-```
-
-5. **Open a Pull Request**
+6. **Open a Pull Request**
 
 * Go to your fork on GitHub.
 * Click **Compare & pull request**.
 * Add a short description (e.g., “Added Emerald save by joebloggs before Elite Four”).
 * Submit the PR.
+
+> This workflow keeps `main` clean and makes it easier to review contributions.
 
 ---
 
@@ -260,3 +264,4 @@ git push origin add-my-saves
 * Useful checkpoints: before legendaries, trade evolutions, or Elite Four.
 * Double-check that your save works in an emulator.
 * Follow folder/naming rules carefully — PRs not following them may be rejected.
+
