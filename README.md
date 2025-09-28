@@ -7,8 +7,8 @@ These saves are provided so players can:
 - Skip trade evolutions.  
 - Jump to key checkpoints (before legendaries, gyms, or the Elite Four).  
 
-All saves in this repo are stored as **`.sav` backups**.  
-👉 You may need to **rename them** depending on the emulator or hardware you’re using.
+All saves in this repo are stored as **`.sav/.gci/*` backups**.  
+👉 You will need to **rename them** depending on the emulator or hardware you’re using.
 
 ---
 
