@@ -210,48 +210,90 @@ pokemon-saves/omega-ruby/joebloggs/DDMMYYYYHHMM    <- 3DS backup (main)
 
 ## 5. Submitting your save (GitHub Pull Request)
 
-1. **Clone the repository**
+> **Note:**  
+> - On **Windows**, run these commands in **Git Bash** (installed automatically with Git for Windows).  
+> - On **MacOS** and **Linux**, just use your normal Terminal.
 
+### Step 1 – Create a GitHub account
+If you don’t already have one, go to [https://github.com](https://github.com) and sign up.  
+
+### Step 2 – Fork this repository
+1. Visit the main repo: [Bl1ndBeholder/pokemon-saves](https://github.com/Bl1ndBeholder/pokemon-saves).  
+2. Click the **Fork** button (top right).  
+3. This creates your own copy of the repo under your account.  
+
+### Step 3 – Set up Git with SSH
+1. Generate an SSH key (if you don’t already have one):  
+   ```bash
+   ssh-keygen -t ed25519 -C "your_email@example.com"
+   ```  
+   Press Enter to accept defaults.  
+
+   *On Windows, run this inside **Git Bash**. Keys are stored in:*  
+   ```
+   C:\Users\<YourName>\.ssh\
+   ```  
+
+2. Copy the public key:  
+   ```bash
+   cat ~/.ssh/id_ed25519.pub
+   ```  
+
+3. Go to **GitHub → Settings → SSH and GPG Keys → New SSH key**, and paste the contents of your `.pub` file.  
+
+### Step 4 – Clone your fork
+Replace `<username>` with your GitHub username:  
 ```bash
-git clone https://github.com/Bl1ndBeholder/pokemon-saves.git
+git clone git@github.com:<username>/pokemon-saves.git
 cd pokemon-saves
 ```
 
-2. **Add your save files**
+### Step 5 – Keep your fork up to date
+Link the main repo as “upstream”:  
+```bash
+git remote add upstream https://github.com/Bl1ndBeholder/pokemon-saves.git
+```
+Update before you start work:  
+```bash
+git fetch upstream
+git merge upstream/main
+```
 
-* Create a folder with your GitHub username in the correct game folder.
-* Copy your save files there.
+### Step 6 – Add your save files
+* Create a folder with your GitHub username in the correct game folder.  
+* Copy your save files there.  
 
-3. **Create a branch named after the game**
-
+### Step 7 – Create a branch named after the game
 ```bash
 git checkout -b <gamename>
 ```
-Example: `git checkout -b emerald`
+Example:  
+```bash
+git checkout -b emerald
+```
 
-4. **Commit changes**
-
+### Step 8 – Commit your changes
 ```bash
 git add .
 git commit -m "<current gamestate>"
 ```
-Example: `git commit -m "before the second gym"`
+Example:  
+```bash
+git commit -m "before the second gym"
+```
 
-5. **Push changes**
-
+### Step 9 – Push to your fork
 ```bash
 git push origin <gamename>
 ```
-Example: `git push origin emerald`
 
-6. **Open a Pull Request**
+### Step 10 – Open a Pull Request
+1. Go to your fork on GitHub.  
+2. Click **Compare & pull request**.  
+3. Add a short description (e.g., “Added Emerald save by joebloggs before Elite Four”).  
+4. Submit the PR.  
 
-* Go to your fork on GitHub.
-* Click **Compare & pull request**.
-* Add a short description (e.g., “Added Emerald save by joebloggs before Elite Four”).
-* Submit the PR.
-
-> This workflow keeps `main` clean and makes it easier to review contributions.
+> This workflow ensures all contributions come from forks and branches, keeping `main` clean and safe.  
 
 ---
 
